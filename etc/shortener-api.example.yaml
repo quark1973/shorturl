@@ -1,0 +1,29 @@
+Name: shortener-api
+Host: 0.0.0.0
+Port: 8888
+
+ShortUrlDB:
+  DSN: user:password@tcp(localhost:3306)/url?charset=utf8mb4&parseTime=True&loc=Local
+
+Sequence:
+  DSN: user:password@tcp(localhost:3306)/url?charset=utf8mb4&parseTime=True&loc=Local
+  BizTag: short_url
+  Step: 1000
+
+ShortDomain: qimi.cn/
+
+Redis:
+  Addrs:
+    - localhost:6379
+  Cluster: false
+  Password: ""
+  DB: 0
+
+ShortUrlCacheTTL: 86400
+ShortUrlBloomBits: 20000000
+
+Feishu:
+  AppID: ""
+  AppSecret: ""
+  VerificationToken: ""
+  APIBase: https://open.feishu.cn/open-apis
